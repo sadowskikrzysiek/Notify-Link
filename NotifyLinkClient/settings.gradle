@@ -1,0 +1,2 @@
+rootProject.name='NotifyLinkClient'
+include ':app'

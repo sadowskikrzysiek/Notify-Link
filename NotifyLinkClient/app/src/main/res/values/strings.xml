@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NotifyLinkClient</string>
+    <string name="login_description">W celu rejestracji oraz zarządzania powiadomieniami odwiedź witrynę aplikacji NotifyLink.</string>
+    <string name="password">Hasło:</string>
+    <string name="username">Nazwa użytkownika:</string>
+    <string name="login">Zaloguj się</string>
+    <string name="refresh">Odśwież</string>
+    <string name="logout">Wyloguj się</string>
+    <string name="menu_description">Powiadomienia będą pobierane co 5 minut, gdy uruchomiony jest ten ekran.</string>
+</resources>
