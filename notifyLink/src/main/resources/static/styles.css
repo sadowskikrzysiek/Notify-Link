@@ -1,0 +1,17 @@
+@media screen and (max-width: 720px) {
+    .navbar-nav{
+        font-size: 11px;
+    }
+}
+    #center {
+margin-top: 50px;
+line-height: 28px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+font-family: "Times New Roman", Times, serif;
+	   font-style: italic;
+}
+span.validationError {
+	color: red;
+}

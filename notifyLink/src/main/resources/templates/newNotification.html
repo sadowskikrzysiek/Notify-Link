@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+  <meta charset="utf-8">
+    <title>Notify Link</title>
+   <link rel="stylesheet" th:href="@{/styles.css}">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+  	<nav class="navbar navbar-inverse" >
+
+			<ul class="nav navbar-nav">  
+	  <li>    <a href='/' >Home</a> </li>
+	  <li>    <a href='/newNotification' >Dodaj nowe powiadomienie.</a> </li>
+	  <li>    <a href='/waitingNotifications' >Oczekujące powiadomienia</a></li>
+	  <li>    <a href='/notificationArchive' >Archiwum powiadomień</a></li>	  
+	  <li>    <a href='/newFriend' >Dodaj znajomego</a></li>
+	  <li>    <a href='/friends' >Znajomi</a></li>
+	  <li>    <a href='/getInvitations' >Zaproszenia do znajomych</a></li>
+	  <li>	  <a href='/settings' >Ustawienia</a></li>
+			 
+			</ul>
+			</nav>
+			<form method="POST" th:action="@{/logout}" id="logoutForm">
+      <input type="submit" value="Logout"/>
+</form>
+			 <div id="center">
+    <h1>Tutaj możesz dodać nowe powiadomienie.</h1>
+ 
+
+    <form th:method="POST" th:object="${Notification}" th:action="@{/newNotification}">
+ 
+
+	  <h3>Nazwa powiadomienia:</h3>
+      <input type="text" th:field="*{name}"/>
+        <span class="validationError"
+            th:if="${#fields.hasErrors('name')}" 
+            th:errors="*{name}">Name Error</span>
+      
+      <h3>Opis:</h3>
+      <input type="text" th:field="*{description}"/>
+    
+   
+<div class="grid">
+
+      <div class="friend-group" id="friends">
+      <h3>Odbiorcy:</h3>
+     <div th:each="friend : ${friendsList}">
+        <input name="friends" type="checkbox"  th:value="${friend.id}"  /><br/>
+          <span th:text="${friend.name}">NOTIFICATION_RECEIVER</span>
+       </div>
+       </div>
+    
+  </div>
+     
+      <br/>
+
+      <button>Dodaj swoje powiadomienie</button>
+    
+    </form>
+</div>
+  </body>
+</html>
+

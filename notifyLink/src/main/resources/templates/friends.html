@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+  <meta charset="utf-8">
+    <title>Notify Link</title>
+   <link rel="stylesheet" th:href="@{/styles.css}">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+  	<nav class="navbar navbar-inverse" >
+
+			<ul class="nav navbar-nav">  
+	  <li>    <a href='/' >Home</a> </li>
+	  <li>    <a href='/newNotification' >Dodaj nowe powiadomienie.</a> </li>
+	  <li>    <a href='/waitingNotifications' >Oczekujące powiadomienia</a></li>
+	  <li>    <a href='/notificationArchive' >Archiwum powiadomień</a></li>	  
+	  <li>    <a href='/newFriend' >Dodaj znajomego</a></li>
+	  <li>    <a href='/friends' >Znajomi</a></li>
+	  <li>    <a href='/getInvitations' >Zaproszenia do znajomych</a></li>
+	  <li>	  <a href='/settings' >Ustawienia</a></li>
+			 
+			</ul>
+			</nav>
+			<form method="POST" th:action="@{/logout}" id="logoutForm">
+      <input type="submit" value="Logout"/>
+</form>
+			 <div id="center">
+    <h1>Znajomi</h1>
+
+
+ 
+
+	
+
+     
+     <div th:each="friend : ${friendsList}">
+     <p>
+     Nazwa: <span th:text="${friend.name}">NAME</span><br>
+      
+     
+      <a th:href="@{'/friend/'+${friend.id}}" >Pokaż szczegóły</a> <br>
+     
+     
+     </p>
+       
+       
+    
+  </div>
+     
+
+	
+
+	  
+    
+
+    
+
+      
+      </div>
+
+
+
+  </body>
+</html>
+
